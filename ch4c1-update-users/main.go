@@ -19,6 +19,13 @@ type Membership struct {
 	MessageCharLimit int
 }
 
+func (user User) SendMessage(message string, messageLength int) (string, bool) {
+	if user.MessageCharLimit >= messageLength {
+		return message, true
+	}
+	return "", false
+}
+
 func newUser(name string, membershipType membershipType) User {
 	newUser := User{
 		Name: name,
