@@ -84,7 +84,7 @@ func TestUpdateBalance(t *testing.T) {
 					"Transaction: " + string(tc.transaction.transactionType) +
 					fmt.Sprintf(", Amount: %.2f\n", tc.transaction.amount) +
 					fmt.Sprintf("Expected balance: %.2f, Actual balance: %.2f\n", tc.expectedBalance, tc.initialCustomer.balance)
-				t.Errorf(failureMessage)
+				t.Error(failureMessage)
 			} else {
 				passCount++
 				successMessage := "PASSED\n" +
